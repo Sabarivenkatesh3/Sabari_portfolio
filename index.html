@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My S3 Web Hosting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #e0f7fa;
+            margin: 0;
+        }
+        h1 {
+            color: #00796b;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #004d40;
+            font-size: 1.2rem;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+            border: 5px solid #00796b;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        img:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+        @keyframes jump {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        img.jumping {
+            animation: jump 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My S3 Hosted Website</h1>
+    <p>This is a simple HTML page hosted on AWS S3.</p>
+    <img src="image1.jpg" alt="Sample Image 1" 
+class="jumping">
+    <img src="image2.jpg" alt="Sample Image 2" 
+class="jumping">
+</body>
+</html>
