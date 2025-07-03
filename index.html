@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sabarivenkatesh | Data Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -79,8 +81,8 @@
 </head>
 <body>
   <header>
-    <h1>Sabarivenkatesh K</h1>
-    <p>AWS Certified Data Engineer | Python, SQL, AWS, Spark | Building Scalable Data Solutions</p>
+    <h1 class="animate__animated animate__fadeInDown">Sabarivenkatesh K</h1>
+    <p class="typed"></p>
   </header>
 
   <nav>
@@ -91,45 +93,45 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about">
+  <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
     <p>I’m a certified AWS Data Engineer with hands-on experience building automated data pipelines and cloud-based solutions. I transitioned from a non-tech role to follow my passion for data systems and automation. With real-world project exposure and a strong foundation in cloud, data, and automation, I’m looking for full-time opportunities in data engineering.</p>
   </section>
 
-  <section id="skills">
+  <section id="skills" data-aos="fade-up">
     <h2>Skills</h2>
     <div class="skills-list">
-      <div class="card"><h3>Languages</h3><p>Python, SQL</p></div>
-      <div class="card"><h3>Cloud & Tools</h3><p>AWS (S3, Redshift, Glue, Lambda), Jenkins, Docker</p></div>
-      <div class="card"><h3>Data</h3><p>Spark, Pandas, NumPy</p></div>
-      <div class="card"><h3>Visualization</h3><p>Power BI, Excel</p></div>
-      <div class="card"><h3>Other</h3><p>Git, Linux, API Integration</p></div>
+      <div class="card animate__animated animate__fadeInUp animate__delay-1s"><h3>Languages</h3><p>Python, SQL</p></div>
+      <div class="card animate__animated animate__fadeInUp animate__delay-1s"><h3>Cloud & Tools</h3><p>AWS (S3, Redshift, Glue, Lambda), Jenkins, Docker</p></div>
+      <div class="card animate__animated animate__fadeInUp animate__delay-1s"><h3>Data</h3><p>Spark, Pandas, NumPy</p></div>
+      <div class="card animate__animated animate__fadeInUp animate__delay-1s"><h3>Visualization</h3><p>Power BI, Excel</p></div>
+      <div class="card animate__animated animate__fadeInUp animate__delay-1s"><h3>Other</h3><p>Git, Linux, API Integration</p></div>
     </div>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2 class="animate__animated animate__fadeIn">Projects</h2>
 
-    <div class="card">
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
       <h3>Automated Deployment Pipeline with AWS and Jenkins</h3>
       <p>Built a CI/CD pipeline using Jenkins to deploy data workflows on AWS infrastructure. Reduced deployment time by 40%.</p>
       <p><strong>Tools:</strong> Jenkins, EC2, S3, RDS, Python</p>
     </div>
 
-    <div class="card">
+    <div class="card" data-aos="fade-up" data-aos-delay="200">
       <h3>ETL Pipeline with AWS Glue and Redshift</h3>
       <p>Created an automated ETL pipeline using AWS Glue to extract data from S3 and load into Redshift for analysis.</p>
       <p><strong>Tools:</strong> Glue, Redshift, S3, Lambda</p>
     </div>
 
-    <div class="card">
+    <div class="card" data-aos="fade-up" data-aos-delay="300">
       <h3>Sales Insights Dashboard</h3>
       <p>Analyzed sales data using Python and SQL, automated reporting with Power BI to identify key performance metrics.</p>
       <p><strong>Tools:</strong> SQL, Python, Power BI</p>
     </div>
   </section>
 
-  <section id="certifications">
+  <section id="certifications" data-aos="fade-up">
     <h2>Certifications</h2>
     <div class="card">
       <h3>AWS Certified Data Engineer – Associate</h3>
@@ -137,7 +139,7 @@
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" data-aos="fade-up">
     <h2>Contact</h2>
     <p>If you'd like to connect or hire me for a role, feel free to reach out:</p>
     <p>Email: <a href="mailto:sabarivarun3@gmail.com" style="color: #00d8ff;">sabarivarun3@gmail.com</a></p>
@@ -149,5 +151,19 @@
   <footer>
     <p>© 2025 Sabarivenkatesh K. Built with ❤️ for Data Engineering.</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    new Typed('.typed', {
+      strings: ['AWS Certified Data Engineer', 'Python • SQL • Spark • AWS'],
+      typeSpeed: 50,
+      backSpeed: 25,
+      loop: true
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
