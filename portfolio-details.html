@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio Details - iPortfolio Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index123.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">SABARIVENKATESH KATHIRVEL</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+
+    <nav class="navmenu" id="navmenu">
+  <ul>
+    <li><a href="index123.html#hero"><i class="bi bi-diagram-3 navicon"></i> Pipeline Overview</a></li>
+    <li><a href="index123.html#about"><i class="bi bi-cloud-arrow-down navicon"></i> Ingestion (About Me)</a></li>
+    <li><a href="index123.html#portfolio"><i class="bi bi-tools navicon"></i> Transformation (Projects)</a></li>
+    <li><a href="index123.html#skills"><i class="bi bi-hdd-stack navicon"></i> Storage (Tech Stack)</a></li>
+    <li><a href="index123.html#services"><i class="bi bi-bar-chart-line navicon"></i> Visualization (Dashboards)</a></li>
+    <li><a href="index123.html#resume"><i class="bi bi-shield-check navicon"></i> Monitoring (Resume)</a></li>
+    <li><a href="index123.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+  </ul>
+</nav>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <section id="hero"><div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0" id="project-title-main">Portfolio Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index123.html">Home</a></li>
+            <li class="current" id="project-title-breadcrumb">Portfolio Details</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title --></section>
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio"><section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+
+              <div class="swiper-wrapper align-items-center" id="project-images">
+                <!-- Project images will be loaded here by JavaScript -->
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: <span id="project-category"></span></li>
+                <li><strong>Client</strong>: <span id="project-client"></span></li>
+                <li><strong>Project date</strong>: <span id="project-date"></span></li>
+                <li><strong>Project URL</strong>: <a href="#" id="project-url"></a></li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <h2 id="project-description-title"></h2>
+              <p id="project-description-text"></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Details Section --></section>
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Define project details
+      const projectDetails = {
+        "ProjectAlpha": {
+          title: "Project Alpha: Real-time Data Ingestion",
+          category: "Data Pipelines",
+          client: "Global Health Inc.",
+          date: "July 2023",
+          url: "#", // Replace with actual project URL if available
+          descriptionTitle: "Scalable Data Ingestion Pipeline for Real-time Analytics",
+          descriptionText: "Designed and implemented a robust data ingestion pipeline on AWS, utilizing Kinesis and Lambda to capture and process streaming healthcare data in real-time. This improved data availability for analytics by 35% and reduced latency significantly. The solution ensures data integrity and scalability to handle high-volume data streams.",
+          images: [
+            "https://placehold.co/800x600/FF5733/FFFFFF?text=Project+Alpha+1",
+            "https://placehold.co/800x600/FF5733/FFFFFF?text=Project+Alpha+2",
+            "https://placehold.co/800x600/FF5733/FFFFFF?text=Project+Alpha+3"
+          ]
+        },
+        "ProjectBeta": {
+          title: "Project Beta: ETL Optimization",
+          category: "ETL & Data Transformation",
+          client: "E-commerce Solutions Ltd.",
+          date: "April 2023",
+          url: "#", // Replace with actual project URL if available
+          descriptionTitle: "Optimized ETL Processes for Large E-commerce Dataset",
+          descriptionText: "Led the optimization of existing ETL workflows for a massive e-commerce dataset, reducing processing time by 40% using AWS Glue and PySpark. Implemented data quality checks and automated error handling, leading to a 20% reduction in data discrepancies and improved reporting accuracy.",
+          images: [
+            "https://placehold.co/800x600/33FF57/FFFFFF?text=Project+Beta+1",
+            "https://placehold.co/800x600/33FF57/FFFFFF?text=Project+Beta+2"
+          ]
+        },
+        "ProjectGamma": {
+          title: "Project Gamma: Data Lake Implementation",
+          category: "Data Lake & Storage",
+          client: "Financial Services Corp.",
+          date: "January 2023",
+          url: "#", // Replace with actual project URL if available
+          descriptionTitle: "Designed and Implemented a Secure Data Lake on AWS S3",
+          descriptionText: "Architected and deployed a secure and scalable data lake solution on AWS S3 for storing diverse financial data. Implemented data partitioning and compression strategies, resulting in a 30% cost reduction and enhanced query performance for analytical teams. Ensured compliance with industry security standards using AWS KMS.",
+          images: [
+            "https://placehold.co/800x600/3357FF/FFFFFF?text=Project+Gamma+1",
+            "https://placehold.co/800x600/3357FF/FFFFFF?text=Project+Gamma+2",
+            "https://placehold.co/800x600/3357FF/FFFFFF?text=Project+Gamma+3"
+          ]
+        },
+        "ProjectDelta": {
+          title: "Project Delta: Business Intelligence Dashboard",
+          category: "Data Visualization",
+          client: "Retail Analytics Co.",
+          date: "October 2022",
+          url: "#", // Replace with actual project URL if available
+          descriptionTitle: "Developed Interactive Dashboards using Power BI for Business Insights",
+          descriptionText: "Created a suite of interactive Power BI dashboards for sales and marketing teams, providing real-time insights into key performance indicators. Integrated data from various sources and designed intuitive visualizations, empowering stakeholders to make data-driven decisions, leading to a 15% increase in marketing campaign effectiveness.",
+          images: [
+            "https://placehold.co/800x600/FF33E9/FFFFFF?text=Project+Delta+1",
+            "https://placehold.co/800x600/FF33E9/FFFFFF?text=Project+Delta+2"
+          ]
+        }
+      };
+
+      // Function to get query parameter from URL
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      const projectName = getQueryParam('project');
+      const projectData = projectDetails[projectName];
+
+      // Debugging: Log the project name and data to console
+      console.log("URL-லிருந்து பெறப்பட்ட ப்ராஜெக்ட் பெயர்:", projectName);
+      console.log("ப்ராஜெக்ட் தரவு:", projectData);
+
+      if (projectData) {
+        document.getElementById('project-title-main').innerText = projectData.title;
+        document.getElementById('project-title-breadcrumb').innerText = projectData.title;
+        document.getElementById('project-category').innerText = projectData.category;
+        document.getElementById('project-client').innerText = projectData.client;
+        document.getElementById('project-date').innerText = projectData.date;
+        
+        const projectUrlElement = document.getElementById('project-url');
+        projectUrlElement.href = projectData.url;
+        projectUrlElement.innerText = projectData.url === "#" ? "N/A" : projectData.url; // Display N/A if URL is just #
+
+        document.getElementById('project-description-title').innerText = projectData.descriptionTitle;
+        document.getElementById('project-description-text').innerText = projectData.descriptionText;
+
+        const projectImagesContainer = document.getElementById('project-images');
+        projectImagesContainer.innerHTML = ''; // Clear existing images
+        projectData.images.forEach(imagePath => {
+          const swiperSlide = document.createElement('div');
+          swiperSlide.classList.add('swiper-slide');
+          const img = document.createElement('img');
+          img.src = imagePath;
+          img.alt = projectData.title;
+          swiperSlide.appendChild(img);
+          projectImagesContainer.appendChild(swiperSlide);
+        });
+
+        // Reinitialize Swiper after images are loaded
+        if (typeof Swiper !== 'undefined') {
+          new Swiper('.portfolio-details-slider', {
+            loop: true,
+            speed: 600,
+            autoplay: {
+              delay: 5000
+            },
+            slidesPerView: 'auto',
+            pagination: {
+              el: '.swiper-pagination',
+              type: 'bullets',
+              clickable: true
+            }
+          });
+        }
+      } else {
+        // Handle case where project is not found
+        document.getElementById('project-title-main').innerText = "Project Not Found";
+        document.getElementById('project-title-breadcrumb').innerText = "Not Found";
+        document.querySelector('.portfolio-info').innerHTML = "<p>தேர்ந்தெடுக்கப்பட்ட ப்ராஜெக்ட் விவரங்களை ஏற்ற முடியவில்லை.</p>";
+        document.querySelector('.portfolio-description').innerHTML = "";
+        document.getElementById('project-images').innerHTML = "<p>படங்கள் இல்லை.</p>";
+      }
+    });
+  </script>
+
+</body>
+
+</html>
