@@ -20,6 +20,19 @@
     return document.querySelector(el)
   }
 
+  const typedElement = document.querySelector(".typed");
+  if (typedElement) {
+    const typedStrings = typedElement.getAttribute("data-typed-items").split(",");
+    new Typed(".typed", {
+      strings: typedStrings,
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 2000,
+      loop: true
+    });
+  }
+
+
   /**
    * Easy event listener function
    */
