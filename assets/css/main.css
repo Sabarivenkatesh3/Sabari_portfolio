@@ -567,7 +567,10 @@ section,
   align-items: center;
   justify-content: center;
 
+
   background-image: url("assets/img/Sabari_laptop_profile_image1.jpg");
+  background-image: url("C:\Users\Dell\Downloads\iPortfolio-1.0.0 (1)\iPortfolio-1.0.0\assets\img\Sabari_laptop_profile_image.jpg");
+
   background-size: cover;
   background-position: right center; /* or left center */
   background-repeat: no-repeat;

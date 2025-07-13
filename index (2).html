@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>SABARIVENKATESH - PORTFOLIO</title>
+  <meta
+    content="SABARIVENKATESH KATHIRVEL, AWS Certified Data Engineer - Associate, Data Pipelines, ETL, Data Lake, AWS Cloud, Interactive Terminal"
+    name="description">
+  <meta
+    content="Data Engineer, AWS, ETL, Data Lake, Python, SQL, PySpark, Redshift, Glue, Athena, QuickSight, Lambda, Healthcare Data, Interactive Terminal, Portfolio"
+    name="keywords">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/FAVICON IMAGES/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/FAVICON IMAGES/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/FAVICON IMAGES/favicon-16x16.png">
+  <link rel="manifest" href="assets/img/FAVICON IMAGES/site.webmanifest">
+
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    body.lock-scroll {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    .section {
+      max-height: 100vh;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 80px;
+      /* for comfort */
+    }
+
+    /* Custom styles for pipeline navigation */
+    .pipeline-container {
+      position: fixed;
+      /* Fix to viewport */
+      bottom: 20px;
+      /* Distance from bottom */
+      left: 50%;
+      /* Start from center */
+      transform: translateX(-50%);
+      /* Center align */
+      display: flex;
+      flex-wrap: nowrap;
+      /* Force single line */
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      z-index: 999;
+      background-color: #1a1a2e;
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .pipeline-box {
+      background-color: #273c75;
+      color: #17caf3;
+      padding: 15px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      white-space: nowrap;
+
+      /* Animation */
+      opacity: 0;
+      animation: slideUpFadeIn 0.6s ease-out forwards;
+    }
+
+    .pipeline-box:hover {
+      background-color: #40739e;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #17caf3, 0 0 25px #17caf3;
+      transition: 0.3s ease-in-out;
+    }
+
+    .pipeline-box i {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .arrow {
+      font-size: 24px;
+      color: white;
+      margin: 0 5px;
+
+      /* Animation */
+      opacity: 0;
+      animation: slideUpFadeIn 0.6s ease-out forwards;
+    }
+
+    /* Keyframes */
+    @keyframes slideUpFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Staggered animation delays */
+    .pipeline-box:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .arrow:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    .pipeline-box:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    .arrow:nth-child(4) {
+      animation-delay: 0.25s;
+    }
+
+    .pipeline-box:nth-child(5) {
+      animation-delay: 0.3s;
+    }
+
+    .arrow:nth-child(6) {
+      animation-delay: 0.35s;
+    }
+
+    .pipeline-box:nth-child(7) {
+      animation-delay: 0.4s;
+    }
+
+    .arrow:nth-child(8) {
+      animation-delay: 0.45s;
+    }
+
+    .pipeline-box:nth-child(9) {
+      animation-delay: 0.5s;
+    }
+
+    .stats-row .stats-item {
+      background: #ffffff10;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 12px rgba(23, 202, 243, 0.15);
+      height: 100%;
+    }
+
+    .stats-row .stats-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(23, 202, 243, 0.3);
+    }
+
+    .stats-row .stats-item i {
+      font-size: 2rem;
+      color: #17caf3;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .stats-row .stats-item span.purecounter {
+      font-size: 2rem;
+      font-weight: 700;
+      display: block;
+      color: #fff;
+    }
+
+    .stats-row .stats-item p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .section-subtitle {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #17caf3;
+      margin-bottom: 1rem;
+    }
+
+
+    /* Interactive Terminal Overlay Styles */
+    .terminal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      /* Semi-transparent dark overlay */
+      z-index: 9999;
+      /* On top of everything */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    .terminal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .terminal-content {
+      max-width: 900px;
+      /* Max width for better readability */
+      width: 90%;
+      /* Responsive width */
+      background: #000;
+      /* Pure black for terminal content */
+      padding: 1.5rem;
+      border-radius: 8px;
+      color: #0f0;
+      /* Green text */
+      box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
+      /* Stronger green glow */
+      border: 2px solid #0f0;
+      /* Green border */
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 80vh;
+      /* Make it take up most of the viewport height */
+    }
+
+    .terminal-content h2 {
+      color: #0f0;
+      /* Green heading */
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .output {
+      white-space: pre-wrap;
+      /* Preserve whitespace and wrap text */
+      flex-grow: 1;
+      /* Allow output to take available space */
+      margin-bottom: 1rem;
+      font-family: 'Fira Code', 'monospace';
+      /* Use a monospace font for terminal feel */
+      overflow-y: auto;
+      /* Scrollable output */
+      border-bottom: 1px dashed #0f0;
+      /* Dashed separator */
+      padding-bottom: 1rem;
+    }
+
+    .prompt {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .prompt span {
+      color: #0f0;
+      font-family: 'Fira Code', 'monospace';
+      font-size: 1.1rem;
+    }
+
+    .prompt input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #0f0;
+      font-family: 'Fira Code', 'monospace';
+      width: 100%;
+      font-size: 1.1rem;
+      padding-left: 0.5rem;
+    }
+
+    .close-terminal-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      color: #0f0;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .close-terminal-btn:hover {
+      color: #00ff00;
+      /* Lighter green on hover */
+    }
+
+    /* Floating Toggle Button */
+    .terminal-toggle-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #76D7C4;
+      /* Teal */
+      color: #212F3D;
+      /* Dark text */
+      padding: 15px 20px;
+      border-radius: 50px;
+      /* Pill shape */
+      font-weight: bold;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      z-index: 9998;
+      /* Below overlay, above content */
+      animation: bounce 1s infinite;
+      /* Changed to bounce animation */
+    }
+
+    .terminal-toggle-button:hover {
+      background-color: #5DADE2;
+      /* Lighter blue on hover */
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      /* Stronger shadow on hover */
+    }
+
+    /* Keyframes for bounce animation */
+    @keyframes bounce {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(-80px);
+        /* Bounce up */
+      }
+
+      60% {
+        transform: translateY(-25px);
+        /* Slight bounce down */
+      }
+    }
+
+    /* Hero Section - Background Image Rotation Styles */
+    .hero-background-slideshow {
+      transition: none;
+      background-image: url('assets/img/...jpg');
+      background-size: cover;
+      background-position: top right;
+      background-repeat: no-repeat;
+      filter: contrast(3) brightness(3) saturate(1.2);
+      background-image: url('assets/img/Sabari_laptop_profile_image1.jpg');
+    }
+
+
+    /* Ensure hero content is above the slideshow */
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .mini-label {
+      font-size: 0.75rem;
+      /* smaller font */
+      color: #e2e2e2;
+      /* light gray text */
+      font-style: italic;
+      /* makes it look like a subtitle */
+      display: block;
+      margin-top: 2px;
+      letter-spacing: 0.5px;
+    }
+
+    .animated-pipeline-btn {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      z-index: 9999;
+      background: linear-gradient(135deg, #44bd32, #2ecc71);
+      color: #fff;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 50px;
+      box-shadow: 0 0 20px rgba(68, 189, 50, 0.6), 0 0 30px rgba(68, 189, 50, 0.4);
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      animation: pulse-glow 2s infinite ease-in-out, floatBounce 3s ease-in-out infinite;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .animated-pipeline-btn:hover {
+      transform: scale(1.1) rotate(-1deg);
+      box-shadow: 0 0 30px #00ff00, 0 0 50px #44bd32;
+    }
+
+    /* Glowing pulse animation */
+    @keyframes pulse-glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 20px rgba(68, 189, 50, 0.6), 0 0 30px rgba(68, 189, 50, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 0 35px #00ff00, 0 0 55px #00ff00;
+      }
+    }
+
+    /* Floating bounce effect */
+    @keyframes floatBounce {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+
+    .purple-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 40%, rgba(125, 94, 249, 0.2), transparent 60%),
+        radial-gradient(circle at 70% 60%, rgba(108, 66, 255, 0.15), transparent 70%);
+      animation: pulseGlow 6s ease-in-out infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes pulseGlow {
+
+      0%,
+      100% {
+        opacity: 0.5;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.8;
+        transform: scale(1.03);
+      }
+    }
+
+    .hero .container,
+    .hero h2,
+    .hero p {
+      position: relative;
+      z-index: 2;
+    }
+
+
+    /* New styles for the unique Tech Stack section */
+    .tech-card {
+      background-color: #2c2c40;
+      /* Darker background */
+      padding: 30px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease-in-out;
+      height: 100%;
+      /* Ensure consistent height in grid */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #eee;
+      /* Light text color */
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      /* Subtle border */
+    }
+
+    .tech-card:hover {
+      transform: translateY(-5px);
+      /* Lift effect on hover */
+      box-shadow: 0 8px 25px rgba(0, 255, 0, 0.4);
+      /* Green glow on hover */
+      background-color: #3a3a50;
+      /* Slightly lighter on hover */
+    }
+
+    .tech-card .icon {
+      font-size: 3.5rem;
+      /* Larger icon size */
+      color: #17caf3;
+      /* Teal color for icons */
+      margin-bottom: 15px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .tech-card:hover .icon {
+      color: #00ff00;
+      /* Brighter green on hover */
+    }
+
+    .tech-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #fff;
+      /* White heading */
+    }
+
+    .tech-card p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #ccc;
+      /* Lighter grey for description */
+    }
+
+    .hero-text {
+      font-size: 1.5rem;
+      color: #0747f6;
+    }
+
+    .typed {
+      color: #22fbff;
+    }
+
+    @keyframes floatCloud {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .btn-glow:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+      transition: 0.3s ease;
+    }
+
+    .resume-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 1rem;
+    }
+
+    .btn-glow:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+      transition: 0.3s ease;
+    }
+
+    .rotating-quote {
+      font-size: 2rem;
+      font-style: italic;
+      color: #00f7ff;
+      text-shadow: 0 0 10px #00f7ff;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .btn-glow:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+      transition: 0.3s ease;
+    }
+
+    .stars-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+      opacity: 0.05;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png');
+      pointer-events: none;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .data-bits-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .data-bits-container span {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: radial-gradient(circle, #e0b3ff, #b388ff);
+      border-radius: 50%;
+      animation: floatBits 7s ease-in-out infinite;
+      box-shadow:
+        0 0 4px #e0b3ff,
+        0 0 8px #d29bff,
+        0 0 12px #c77aff;
+      opacity: 0.5;
+    }
+
+    @keyframes floatBits {
+      0% {
+        transform: translateY(0) scale(0.8) rotate(0deg);
+        opacity: 0.4;
+      }
+
+      50% {
+        transform: translateY(-100px) scale(1.5) rotate(180deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(0) scale(0.8) rotate(360deg);
+        opacity: 0.4;
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: #17caf3;
+      font-weight: 600;
+      text-shadow: 0 0 8px #17caf3, 0 0 16px #a177ff;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .typed {
+      animation: pulseText 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulseText {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+      }
+    }
+
+    .typed-cursor {
+      color: #ff63e0;
+      text-shadow: 0 0 5px #ff63e0, 0 0 10px #ff63e0;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .hero .row {
+        flex-wrap: nowrap !important;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+      }
+
+      .hero .col-md-6 {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+      }
+
+      .data-bits-container {
+        display: none;
+        /* hide neon dots on mobile for performance */
+      }
+
+      .terminal-toggle-button {
+        bottom: 80px;
+        /* move up to avoid overlapping pipeline */
+      }
+    }
+  </style>
+
+</head>
+
+<body class="index-page">
+
+
+
+  <main class="main">
+    <section id="hero" class="hero section" style="
+  background: linear-gradient(to right, #1f0c29, #462556, #30243e);
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+">
+      <!-- Glowing Star Background Layer -->
+      <div class="stars-overlay"></div>
+
+      <div class="container-fluid p-0">
+        <div class="row g-0 align-items-center flex-nowrap" style="min-height: 100vh; margin: 0; overflow-x: auto;">
+
+
+          <!-- Left: Text Content -->
+          <div class="col-md-6 ps-5 text-white"
+            style="padding-top: 5vh; display: flex; flex-direction: column; height: 100vh;">
+            <div class="data-bits-container"></div>
+            <!-- Quote at top -->
+            <p id="quote-rotator" class="rotating-quote"
+              style="font-size: 3rem; color: #00f7ff; text-shadow: 0 0 10px #00f7ff; opacity: 0; transition: opacity 0.6s ease-in-out; margin-bottom: auto;">
+              <!-- Rotating quote -->
+            </p>
+
+            <!-- Center vertically: name & subtitle -->
+            <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
+              <h2 class="display-5 fw-bold mb-3"
+                style="color: #fff; text-shadow: 0 0 12px #a177ff, 0 0 25px #b388ff; margin-bottom: 20px;">
+                SABARIVENKATESH KATHIRVEL
+              </h2>
+
+              <p class="lead mb-4 hero-subtitle">
+                I'm a <span class="typed"
+                  data-typed-items="AWS Certified Data Engineer, ETL Specialist, Data Lake Architect, Power BI Developer"></span>
+              </p>
+
+
+
+              <div class="d-flex gap-3 mt-4">
+                <a href="https://www.linkedin.com/in/sabarivenkatesh-k/" target="_blank"
+                  class="btn btn-lg btn-glow rounded-circle"
+                  style="background-color: #0077b5; color: white; box-shadow: 0 0 15px rgba(0,119,181,0.5);">
+                  <i class="bi bi-linkedin" style="font-size: 1.5rem;"></i>
+                </a>
+                <a href="https://github.com/Sabarivenkatesh3" target="_blank" class="btn btn-lg btn-glow rounded-circle"
+                  style="background-color: #333; color: white; box-shadow: 0 0 15px rgba(255,255,255,0.3);">
+                  <i class="bi bi-github" style="font-size: 1.5rem;"></i>
+                </a>
+                <a href="assets/img/SABARIVENKATESH_K_DATA_ENGINEER_RESUME.pdf" target="_blank"
+                  class="btn btn-glow rounded-pill resume-btn"
+                  style="background-color: #706f70; color: white; box-shadow: 0 0 15px rgba(248, 247, 248, 0.5);">
+                  <i class="bi bi-file-earmark-person" style="font-size: 1.3rem; vertical-align: middle;"></i>
+                  <span style="margin-left: 0.5rem; font-weight: 600; vertical-align: middle;">Resume</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Full Height Image -->
+          <div class="col-md-6 p-0 d-flex align-items-stretch" style="margin: 0; padding: 0;">
+            <img src="assets/img/Sabari_laptop_profile_image1.jpg" alt="Sabari Profile"
+              style="width: 100%; height: 100vh; object-fit: cover; object-position: top right; display: block;">
+          </div>
+        </div>
+
+      </div>
+      </div>
+      <div class="pipeline-container mt-4" style="display:none;">
+        <div class="pipeline-box" id="box-about" onclick="scrollToSection('about')">
+          <i class="bi bi-upload"></i><br />
+          Ingestion
+          <span class="mini-label">About Me</span>
+        </div>
+        <div class="arrow">→</div>
+        <div class="pipeline-box" id="box-portfolio" onclick="scrollToSection('portfolio')">
+          <i class="bi bi-tools"></i><br />
+          Transformation
+          <span class="mini-label">Projects</span>
+        </div>
+        <div class="arrow">→</div>
+        <div class="pipeline-box" id="box-skills" onclick="scrollToSection('skills')">
+          <i class="bi bi-hdd-stack"></i><br />
+          Storage
+          <span class="mini-label">Skills</span>
+        </div>
+        <div class="arrow">→</div>
+        <div class="pipeline-box" id="box-services" onclick="scrollToSection('services')">
+          <i class="bi bi-bar-chart-line"></i><br />
+          Visualization
+          <span class="mini-label">Services</span>
+        </div>
+        <div class="arrow">→</div>
+        <div class="pipeline-box" id="box-resume" onclick="scrollToSection('resume')">
+          <i class="bi bi-shield-check"></i><br />
+          Monitoring
+          <span class="mini-label">Resume</span>
+        </div>
+      </div>
+
+      <!-- Floating Button (only on hero/homepage) -->
+      <button id="openPipelineBtn" class="animated-pipeline-btn">
+        <span id="pipelineButtonText">Launch the Data Pipeline 🚀</span>
+      </button>
+      <div id="scrollHint" style="
+  position: fixed;
+  bottom: 90px;
+  left: 30px;
+  background: #ffffffee;
+  color: #333;
+  padding: 12px 16px;
+  border-radius: 25px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 10000;
+  animation: floatCloud 3s ease-in-out infinite;
+  font-family: 'Poppins', sans-serif;
+">
+        Hey! cool... Use me to scroll... ➡️
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <section id="about" class="about section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Ingestion (About Me)</h2>
+        <p>AWS Certified Data Engineer - Associate with a proven ability to design, implement, and optimize scalable
+          data pipelines and analytical solutions on AWS Cloud. Demonstrated expertise in ETL processes, data lake
+          management, and transforming complex raw data into actionable insights. Eager to contribute to cutting-edge
+          data engineering challenges.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img src="assets\img\SABARI_PORTFOLIO BG.jpeg" class="img-fluid" alt="Profile Image">
+          </div>
+          <div class="col-lg-8 content">
+            <h2>AWS Certified Data Engineer - Associate</h2>
+            <p class="fst-italic py-3">
+              AWS Certified Data Engineer - Associate with a proven ability to design, implement, and optimize scalable
+              data pipelines and analytical solutions on AWS Cloud. Demonstrated expertise in ETL processes, data lake
+              management, and transforming complex raw data into actionable insights. Eager to contribute to
+              cutting-edge data engineering challenges.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>March 12, 2003</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 9626263113</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Udumalpet, Tirupur</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>22</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>sabarivarun3@gmail.com</span>
+                  </li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Availability:</strong> <span>Available</span></li>
+                </ul>
+              </div>
+              <li>
+                <a href="assets\img\SABARIVENKATESH_K_DATA_ENGINEER_RESUME.pdf"
+                  download="SABARIVENKATESH_K_DATA_ENGINEER_RESUME.pdf" class="btn btn-primary btn-sm ms-3"
+                  style="background-color: #30d6f3; border-color: #44bd32; color: #fff; font-weight: bold; border-radius: 5px; padding: 8px 15px;">
+                  <i class="bi bi-download navicon"></i> Download Resume
+                </a>
+              </li>
+            </div>
+            <p class="py-3">
+              I possess deep knowledge in data engineering and extensive experience with AWS cloud services. I am
+              proficient in managing complex datasets, optimizing performance, and developing data solutions tailored to
+              business needs.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="portfolio" class="portfolio section light-background">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Transformation (Projects)</h2>
+        <p>Here are some key projects showcasing my capabilities in data engineering.</p>
+      </div>
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">Data Pipelines</li>
+            <li data-filter=".filter-product">ETL & Data Transformation</li>
+            <li data-filter=".filter-branding">Data Lake & Storage</li>
+            <li data-filter=".filter-books">Data Visualization</li>
+          </ul>
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <!-- Project 1: Real-Time Healthcare Analytics -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets\img\bg-1.jpg" class="img-fluid" alt="Real-Time Healthcare Analytics">
+                <div class="portfolio-info">
+                  <h4>Real-Time Healthcare Analytics</h4>
+                  <p>Comprehensive healthcare data analytics pipeline on AWS Cloud.</p>
+                  <a href="portfolio-details.html?project=ProjectAlpha" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Project 1 -->
+
+            <!-- Project 2: ETL Pipeline for Healthcare -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets\img\bg-4.jpg" class="img-fluid" alt="ETL Pipeline for Healthcare">
+                <div class="portfolio-info">
+                  <h4>ETL Pipeline for Healthcare</h4>
+                  <p>Robust ETL processes using AWS Glue (Python/PySpark).</p>
+                  <a href="portfolio-details.html?project=ProjectBeta" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Project 2 -->
+
+            <!-- Project 3: S3 Data Lake Optimization -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets\img\bg-2.jpg" class="img-fluid" alt="S3 Data Lake Optimization">
+                <div class="portfolio-info">
+                  <h4>S3 Data Lake Optimization</h4>
+                  <p>Optimized data retrieval from S3 Data Lake using AWS Athena.</p>
+                  <a href="portfolio-details.html?project=ProjectGamma" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Project 3 -->
+
+            <!-- Project 4: Power BI Dashboards -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="assets\img\bg-3.jpg" class="img-fluid" alt="Power BI Dashboards">
+                <div class="portfolio-info">
+                  <h4>Power BI Dashboards</h4>
+                  <p>Interactive dashboards for business insights.</p>
+                  <a href="portfolio-details.html?project=ProjectDelta" title="More Details" class="details-link"><i
+                      class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Project 4 -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Skills Section - Updated with embedded Stats -->
+    <!-- Skills Section - Updated with embedded Stats -->
+    <section id="skills" class="skills section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Storage (Tech Stack)</h2>
+        <p>Here's a detailed look at the technologies and concepts I'm proficient in, crucial for building robust data
+          solutions.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center text-center gy-4">
+
+          <!-- Skill Cards -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+              <i class="fab fa-python icon"></i>
+              <h3>Python</h3>
+              <p>Strong scripting for data processing & automation.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+              <i class="fas fa-database icon"></i>
+              <h3>SQL</h3>
+              <p>Expertise in relational databases and querying.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="300">
+              <i class="fab fa-aws icon"></i>
+              <h3>AWS Cloud</h3>
+              <p>Proficient in S3, Glue, Athena, Redshift, Lambda.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="400">
+              <i class="fas fa-cogs icon"></i>
+              <h3>ETL/ELT</h3>
+              <p>Designing and implementing data pipelines.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="500">
+              <i class="fas fa-warehouse icon"></i>
+              <h3>Data Warehousing</h3>
+              <p>Building and managing data warehouses.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="600">
+              <i class="fas fa-spark icon"></i>
+              <h3>PySpark</h3>
+              <p>Big data processing with Apache Spark.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="700">
+              <i class="fas fa-chart-bar icon"></i>
+              <h3>Power BI</h3>
+              <p>Creating interactive dashboards and reports.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="800">
+              <i class="fas fa-cubes icon"></i>
+              <h3>Data Lake Architecture</h3>
+              <p>Designing scalable data storage solutions.</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- End Container -->
+    </section><!-- End Skills Section -->
+
+    <section id="services" class="services section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Visualization (Dashboards)</h2>
+        <p>My expertise extends to creating impactful data visualizations that transform complex data into actionable
+          insights for stakeholders.</p>
+      </div>
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">Interactive Dashboards</a></h4>
+              <p class="description">Designing and developing dynamic dashboards using tools like Power BI to provide
+                real-time business insights.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="bi bi-graph-up"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">Data Storytelling</a></h4>
+              <p class="description">Translating complex data into compelling visual narratives that are easy to
+                understand and act upon.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="bi bi-pie-chart"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">Custom Reporting</a></h4>
+              <p class="description">Creating tailored reports that address specific business questions and provide deep
+                analytical insights.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon flex-shrink-0"><i class="bi bi-speedometer2"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">Performance Monitoring</a></h4>
+              <p class="description">Developing dashboards for monitoring ETL pipeline performance, data quality, and
+                system health.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon flex-shrink-0"><i class="bi bi-funnel"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">Data Filtering & Drill-down</a></h4>
+              <p class="description">Implementing advanced filtering and drill-down capabilities for granular data
+                exploration.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon flex-shrink-0"><i class="bi bi-cloud-download"></i></div>
+            <div>
+              <h4 class="title"><a href="#" class="stretched-link">Data Export Capabilities</a></h4>
+              <p class="description">Enabling users to export visualized data in various formats for further analysis or
+                sharing.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="resume" class="resume section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Monitoring (Resume & Certifications)</h2>
+        <p>AWS Certified Data Engineer - Associate with a proven ability to design, implement, and optimize scalable
+          data pipelines and analytical solutions on AWS Cloud. Demonstrated expertise in ETL processes, data lake
+          management, and transforming complex raw data into actionable insights. Eager to contribute to cutting-edge
+          data engineering challenges.</p>
+      </div>
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Summary</h3>
+            <div class="resume-item pb-0">
+              <h4>Sabarivenkatesh Kathirvel</h4>
+              <p><em>AWS Certified Data Engineer - Associate with a proven ability to design, implement, and optimize
+                  scalable data pipelines and analytical solutions on AWS Cloud. Demonstrated expertise in ETL
+                  processes, data lake management, and transforming complex raw data into actionable insights.</em></p>
+              <ul>
+                <li>Udumalpet, Tirupur</li>
+                <li>+91 9626263113</li>
+                <li>sabarivarun3@gmail.com</li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Certifications</h3>
+            <div class="resume-item">
+              <h4>AWS Certified Data Engineer – Associate</h4>
+              <p><em>(Issued: AWS)</em></p>
+              <p><a href="https://www.credly.com/badges/b14e4222-06c3-4b32-8b61-b25e89658d54/public_url" target="_blank"
+                  rel="noopener noreferrer">View Certificate <i class="bi bi-box-arrow-up-right"></i></a></p>
+            </div>
+
+            <div class="resume-item">
+              <h4>AWS Certified Cloud Practitioner</h4>
+              <p><em>(Issued: AWS)</em></p>
+              <p><a href="https://www.credly.com/badges/e77c7496-b087-43cf-b799-108c58ca6b5c/public_url" target="_blank"
+                  rel="noopener noreferrer">View Certificate <i class="bi bi-box-arrow-up-right"></i></a></p>
+            </div>
+            <li>
+              <a href="assets\img\SABARIVENKATESH_K_DATA_ENGINEER_RESUME.pdf"
+                download="SABARIVENKATESH_K_DATA_ENGINEER_RESUME.pdf" class="btn btn-primary btn-sm ms-3"
+                style="background-color: #30d6f3; border-color: #44bd32; color: #fff; font-weight: bold; border-radius: 5px; padding: 8px 15px;">
+                <i class="bi bi-download navicon"></i> Download Resume
+              </a>
+            </li>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Data Engineer</h4>
+              <h5>Sep 2024 - Present</h5>
+              <p><em>UST GLOBAL</em></p>
+              <ul>
+                <li>Built and deployed a comprehensive Healthcare Data Analytics pipeline on AWS Cloud, significantly
+                  enhancing data accessibility and consistency by over 35% for critical downstream analysis.</li>
+                <li>Designed and implemented robust ETL processes using AWS Glue (Python/PySpark), directly reducing
+                  manual data preparation efforts by approximately 40%.</li>
+                <li>Optimized data retrieval from an S3 Data Lake using AWS Athena, leading to an acceleration in query
+                  performance by up to 50%.</li>
+                <li>Managed and monitored critical ETL pipelines that processed large volumes of diverse datasets,
+                  ensuring operational efficiency and data integrity.</li>
+                <li>Analyzed complex pipeline architecture and performed comprehensive debugging and validation of data
+                  flows, playing a key role in identifying and resolving data discrepancies for robust data insights.
+                </li>
+                <li>Applied advanced cloud-based data services (AWS), SQL, and data pipeline concepts to drive data
+                  initiatives and ensure robust data handling in a dynamic enterprise environment.</li>
+                <li>Collaborated with cross-functional teams to align data solutions with business objectives and ensure
+                  adherence to quality standards.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="contact" class="contact section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me for any data engineering opportunities or collaborations.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-5">
+
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>Udumalpet, Tirupur, India</p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Me</h3>
+                  <p>+91 9626263113</p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Me</h3>
+                  <p>sabarivarun3@gmail.com</p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+                <i class="fab fa-linkedin flex-shrink-0"></i>
+                <div>
+                  <h3>LinkedIn</h3>
+                  <p><a href="https://www.linkedin.com/in/sabarivenkatesh-k/"
+                      target="_blank">linkedin.com/in/sabarivarun</a></p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="600">
+                <i class="fab fa-github flex-shrink-0"></i>
+                <div>
+                  <h3>GitHub</h3>
+                  <p><a href="https://github.com/Sabarivenkatesh3" target="_blank">github.com/sabarivarun</a></p>
+                </div>
+              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.0827250645014!2d77.23467407481139!3d10.58287518956975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9bf544f19672f%3A0x873133614273064e!2sUdumalpet%2C%20Tamil%20Nadu%20642126!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <form id="contactForm" method="POST">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <label>Your Name</label>
+                  <input type="text" name="name" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label>Your Email</label>
+                  <input type="email" name="email" class="form-control" required>
+                </div>
+                <div class="col-md-12">
+                  <label>Subject</label>
+                  <input type="text" name="subject" class="form-control" required>
+                </div>
+                <div class="col-md-12">
+                  <label>Message</label>
+                  <textarea name="message" class="form-control" rows="10" required></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <button type="submit">Send Message</button>
+                  <div id="statusMsg" style="margin-top: 1rem;"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container text-center">
+      <p class="mb-1">© 2025 <strong class="px-1">Sabarivenkatesh Kathirvel</strong> — All Rights Reserved</p>
+      <p style="font-size: 0.9rem;">Designed & Built with ❤️ and AWS expertise</p>
+    </div>
+  </footer>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Floating Terminal Toggle Button -->
+  <button id="openTerminalBtn" class="terminal-toggle-button">
+    <i class="fas fa-terminal"></i> Open Console
+  </button>
+
+  <!-- Interactive Terminal Overlay -->
+  <div id="terminalOverlay" class="terminal-overlay">
+    <div class="terminal-content">
+      <button id="closeTerminalBtn" class="close-terminal-btn">×</button>
+      <h2>Interactive Data Console</h2>
+      <div class="output" id="output">Welcome to Sabarivenkatesh's Data Terminal\nType 'SELECT * FROM skills;' or
+        'help;!' to get started.\n</div>
+      <div class="prompt" style="display:flex;align-items:center;">
+        <span>&gt;&nbsp;</span>
+        <input type="text" id="commandInput"
+          style="background:transparent;border:none;outline:none;color:#0f0;font-family:monospace;width:100%;"
+          placeholder="Enter SQL-like command..." onkeydown="handleCommand(event)" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const terminalBtn = document.getElementById("openTerminalBtn");
+      const terminalOverlay = document.getElementById("terminalOverlay");
+      const closeTerminalBtn = document.getElementById("closeTerminalBtn");
+
+      if (terminalBtn && terminalOverlay && closeTerminalBtn) {
+        terminalBtn.addEventListener("click", () => {
+          terminalOverlay.classList.add("active");
+        });
+
+        closeTerminalBtn.addEventListener("click", () => {
+          terminalOverlay.classList.remove("active");
+        });
+      }
+    });
+  </script>
+
+  <script>
+    // 1. Define global function
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+
+        // Lock scroll after navigating
+        document.body.classList.add("lock-scroll");
+
+        // Hide nav bar after click
+        const navBar = document.querySelector(".pipeline-container");
+        const toggleIcon = document.getElementById("pipeline-minimized-toggle");
+        if (navBar) navBar.style.display = "none";
+        if (toggleIcon) toggleIcon.style.display = "block";
+      }
+    }
+
+    // 2. DOM Ready
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const messages = [
+        "Launch the Data Pipeline 🚀",
+        "Showcase My Pipeline Power ⚡",
+        "See Me in Action 👨‍💻",
+        "Build with Me, Byte by Byte 💾",
+        "Decode My Portfolio 🧠",
+        "Tap to Transform Data 🔧"
+      ];
+      let idx = 0;
+      const btnText = document.getElementById("pipelineButtonText");
+      let messageInterval = setInterval(() => {
+        idx = (idx + 1) % messages.length;
+        if (btnText) btnText.textContent = messages[idx];
+      }, 3000);
+
+      // Lock scroll on page load
+      document.body.classList.add("lock-scroll");
+
+      const openBtn = document.getElementById("openPipelineBtn");
+      const navBar = document.querySelector(".pipeline-container");
+      const toggleIcon = document.getElementById("pipeline-minimized-toggle");
+
+      if (openBtn) {
+        openBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const isVisible = navBar && navBar.style.display === "flex";
+          if (isVisible) {
+            navBar.style.display = "none";
+            document.body.classList.add("lock-scroll");
+            if (btnText) btnText.textContent = "Launch the Data Pipeline 🚀";
+            if (toggleIcon) toggleIcon.style.display = "block";
+          } else {
+            navBar.style.display = "flex";
+            document.body.classList.remove("lock-scroll");
+            if (btnText) btnText.textContent = "Collapse the Pipeline ✖️";
+            if (toggleIcon) toggleIcon.style.display = "none";
+          }
+        });
+      }
+
+      if (toggleIcon) {
+        toggleIcon.addEventListener("click", function () {
+          if (navBar) navBar.style.display = "flex";
+          toggleIcon.style.display = "none";
+          document.body.classList.remove("lock-scroll");
+        });
+      }
+
+      // BONUS: Setup event handlers for nav boxes (JS-way)
+      const mappings = {
+        "box-about": "about",
+        "box-portfolio": "portfolio",
+        "box-skills": "skills",
+        "box-services": "services",
+        "box-resume": "resume"
+      };
+
+      Object.keys(mappings).forEach(boxId => {
+        const el = document.getElementById(boxId);
+        if (el) {
+          el.addEventListener("click", function () {
+            scrollToSection(mappings[boxId]);
+          });
+        }
+      });
+    });
+  </script>
+
+  <script>
+    let scrollHintShown = false;
+    window.addEventListener('wheel', function (e) {
+      if (document.body.classList.contains('lock-scroll') && !scrollHintShown) {
+        const hint = document.getElementById("scrollHint");
+        if (hint) {
+          hint.style.display = "block";
+          scrollHintShown = true;
+          setTimeout(() => {
+            hint.style.display = "none";
+            scrollHintShown = false;
+          }, 3000);
+        }
+      }
+    }, { passive: true });
+  </script>
+
+
+
+
+  <script src="https://unpkg.com/desandro-matches-selector@2.0.2/matches-selector.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var grid = document.querySelector('.isotope-container');
+      if (grid) {
+        var iso = new Isotope(grid, {
+          itemSelector: '.isotope-item',
+          layoutMode: 'masonry'
+        });
+
+        // bind filter buttons
+        var filtersElem = document.querySelector('.portfolio-filters');
+        filtersElem.addEventListener('click', function (event) {
+          if (!matchesSelector(event.target, 'li')) return;
+          filtersElem.querySelectorAll('li').forEach(function (el) {
+            el.classList.remove('filter-active');
+          });
+          event.target.classList.add('filter-active');
+
+          var filterValue = event.target.getAttribute('data-filter');
+          iso.arrange({ filter: filterValue });
+        });
+      }
+    });
+  </script>
+
+
+  <script>
+    function handleCommand(event) {
+      if (event.key === "Enter") {
+        const input = event.target;
+        const command = input.value.trim().toLowerCase();
+        const output = document.getElementById("output");
+
+        let response = "";
+
+        output.innerText += `\n> ${command}\n`;
+
+        switch (command) {
+          case "help":
+          case "help;":
+            response = `Available commands:\n- SELECT * FROM skills;\n- SELECT * FROM projects;\n- INSERT INTO skills;\n- UPDATE skills;\n- clear;`;
+            break;
+
+          case "select * from skills;":
+            response = `SKILLS:\n- Python\n- SQL\n- AWS (S3, Glue, Athena, Redshift)\n- ETL / ELT Pipelines\n- Data Lake Architecture\n- PySpark\n- Power BI`;
+            break;
+
+          case "select * from projects;":
+            response = `PROJECTS:\n1. Real-Time Healthcare Analytics\n2. ETL Pipeline for Healthcare\n3. S3 Data Lake Optimization\n4. Power BI Dashboards`;
+            break;
+
+          case "insert into skills;":
+            response = `🛠️ New skill inserted into resume! (simulated)`;
+            break;
+
+          case "update skills;":
+            response = `✅ Skills updated with latest certifications and experience.`;
+            break;
+
+          case "clear;":
+          case "clear":
+            output.innerText = "Welcome to Sabarivenkatesh's Data Terminal\nType 'help;' to get started.\n";
+            input.value = "";
+            return;
+
+          default:
+            response = `❌ Unknown command. Type 'help;' for supported options.`;
+        }
+
+        simulateTyping(output, response, 10);
+        input.value = "";
+      }
+    }
+
+    function simulateTyping(element, text, speed = 20) {
+      let index = 0;
+      const typing = setInterval(() => {
+        if (index < text.length) {
+          element.innerText += text.charAt(index);
+          element.scrollTop = element.scrollHeight;
+          index++;
+        } else {
+          clearInterval(typing);
+        }
+      }, speed);
+    }
+  </script>
+
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const formData = new FormData(form);
+
+      fetch("https://script.google.com/macros/s/AKfycbwKBUD-9ABpmL2BnEoejpUvktBvN60AGz13j7-YqHMOS3Vzv9DB5oeb43d8iyxCcnc_/exec", {
+        method: "POST",
+        body: formData
+      })
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("statusMsg").textContent = "✅ Message sent successfully!";
+          form.reset();
+        })
+        .catch(err => {
+          document.getElementById("statusMsg").textContent = "❌ Failed to send. Try again later.";
+          console.error("Error:", err);
+        });
+    });
+  </script>
+
+  <script>
+    document.querySelectorAll(".hero-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-target");
+
+        // Show panel
+        document.getElementById("hero-detail-panel").style.display = "block";
+
+        // Hide all first
+        document.querySelectorAll(".detail-content").forEach(el => {
+          el.style.display = "none";
+        });
+
+        // Show selected
+        document.getElementById(target).style.display = "block";
+      });
+    });
+  </script>
+
+  <script>
+    const quotes = [
+      "Turning raw data into powerful decisions.",
+      "From chaos to clarity — one dataset at a time.",
+      "Building pipelines that move ideas, not just bytes.",
+      "Where insights meet automation.",
+      "Crafting stories with every data stream."
+    ];
+    let idx = 0;
+    const el = document.getElementById("quote-rotator");
+
+    function rotateQuote() {
+      el.style.opacity = 0;
+      setTimeout(() => {
+        el.textContent = `“${quotes[idx]}”`;
+        el.style.opacity = 1;
+        idx = (idx + 1) % quotes.length;
+      }, 600);
+    }
+    rotateQuote();
+    setInterval(rotateQuote, 4000);
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const container = document.querySelector('.data-bits-container');
+      for (let i = 0; i < 60; i++) {
+        const bit = document.createElement('span');
+        bit.style.left = Math.random() * 100 + '%';
+        bit.style.top = Math.random() * 100 + '%';
+        bit.style.animationDelay = (Math.random() * 10) + 's';
+        bit.style.width = (Math.random() * 2 + 2) + 'px';
+        bit.style.height = bit.style.width;
+        container.appendChild(bit);
+      }
+    });
+  </script>
+
+
+</body>
+
+</html>

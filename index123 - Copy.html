@@ -31,75 +31,46 @@
   <link href="assets/css/main.css" rel="stylesheet">
 
   <style>
-    /* Override default iPortfolio margin for main content after removing sidebar */
-    #main {
-      margin-left: 0 !important;
-    }
-
-    /* Class to disable scrolling */
-    body.no-scroll {
-      overflow: hidden !important; /* Force hide scrollbars */
-    }
-
     /* Custom styles for pipeline navigation */
     .pipeline-container {
       position: fixed; /* Fix to viewport */
       bottom: 20px; /* Distance from bottom */
       left: 50%; /* Start from center */
-      transform: translateX(-50%) translateY(50px); /* Start slightly below and centered */
+      transform: translateX(-50%); /* Center align */
       display: flex;
       flex-wrap: nowrap; /* Force single line */
       justify-content: center;
       align-items: center;
       gap: 10px;
-      z-index: 999; /* Higher z-index */
+      z-index: 999;
       background-color: #1a1a2e;
       padding: 10px 20px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      /* Initial hidden state with transition properties */
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
-    }
-
-    .pipeline-container.active {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(-50%) translateY(0); /* Move to original position */
     }
 
     .pipeline-box {
+      background-color: #273c75;
       color: #17caf3;
       padding: 15px 25px;
       border-radius: 10px;
       cursor: pointer;
       font-weight: bold;
-      transition: transform 0.3s, box-shadow 0.3s; /* Only transform and shadow */
+      transition: 0.3s;
       text-align: center;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
       white-space: nowrap;
       
-      /* Enhanced Data flow background animation */
-      background: linear-gradient(90deg, #273c75 0%, #17caf3 25%, #273c75 50%, #17caf3 75%, #273c75 100%);
-      background-size: 400% 100%; /* Make gradient much wider for continuous flow */
-      animation: flowBackground 8s linear infinite; /* Continuous flow animation */
+      /* Animation */
+      opacity: 0;
+      animation: slideUpFadeIn 0.6s ease-out forwards;
     }
 
     .pipeline-box:hover {
+      background-color: #40739e;
       transform: scale(1.05);
       box-shadow: 0 0 15px #17caf3, 0 0 25px #17caf3;
       transition: 0.3s ease-in-out;
-    }
-
-    /* New Keyframes for data flow background */
-    @keyframes flowBackground {
-        0% {
-            background-position: 100% 0; /* Start with the end of the gradient visible */
-        }
-        100% {
-            background-position: -100% 0; /* Move the gradient completely across */
-        }
     }
 
     .pipeline-box i {
@@ -111,30 +82,34 @@
       font-size: 24px;
       color: white;
       margin: 0 5px;
+
+      /* Animation */
+      opacity: 0;
+      animation: slideUpFadeIn 0.6s ease-out forwards;
     }
 
-    /* New button to trigger pipeline visibility */
-    .travel-pipeline-button {
-      background-color: #17caf3; /* Attractive color */
-      color: #1a1a2e;
-      padding: 15px 30px;
-      border-radius: 50px; /* Pill shape */
-      font-weight: bold;
-      font-size: 1.2rem;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-      transition: all 0.3s ease;
-      position: relative; /* To allow z-index */
-      z-index: 1000; /* Ensure it's above hero background and other elements */
-      margin-top: 50px; /* Space from typed text */
+    /* Keyframes */
+    @keyframes slideUpFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .travel-pipeline-button:hover {
-      background-color: #00ff00; /* Green on hover */
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 8px 20px rgba(0, 255, 0, 0.6);
-    }
+    /* Staggered animation delays */
+    .pipeline-box:nth-child(1) { animation-delay: 0.1s; }
+    .arrow:nth-child(2)         { animation-delay: 0.15s; }
+    .pipeline-box:nth-child(3) { animation-delay: 0.2s; }
+    .arrow:nth-child(4)         { animation-delay: 0.25s; }
+    .pipeline-box:nth-child(5) { animation-delay: 0.3s; }
+    .arrow:nth-child(6)         { animation-delay: 0.35s; }
+    .pipeline-box:nth-child(7) { animation-delay: 0.4s; }
+    .arrow:nth-child(8)         { animation-delay: 0.45s; }
+    .pipeline-box:nth-child(9) { animation-delay: 0.5s; }
 
     /* Interactive Terminal Overlay Styles */
     .terminal-overlay {
@@ -232,55 +207,57 @@
 
     /* Floating Toggle Button */
     .terminal-toggle-button {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #76D7C4; /* Teal */
-        color: #212F3D; /* Dark text */
-        padding: 15px 20px;
-        border-radius: 50px; /* Pill shape */
-        font-weight: bold;
-        font-size: 1rem;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-        z-index: 9998; /* Below overlay, above content */
-        animation: bounce 1s infinite; /* Changed to bounce animation */
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #76D7C4; /* Teal */
+      color: #212F3D; /* Dark text */
+      padding: 15px 20px;
+      border-radius: 50px; /* Pill shape */
+      font-weight: bold;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      z-index: 9998; /* Below overlay, above content */
+      animation: bounce 1s infinite; /* Changed to bounce animation */
     }
-
     .terminal-toggle-button:hover {
-        background-color: #5DADE2; /* Lighter blue on hover */
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+      background-color: #5DADE2; /* Lighter blue on hover */
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
     }
-
     /* Keyframes for bounce animation */
     @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
-            transform: translateY(0);
-        }
-        40% {
-            transform: translateY(-15px); /* Bounce up */
-        }
-        60% {
-            transform: translateY(-7px); /* Slight bounce down */
-        }
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-80px); /* Bounce up */
+      }
+      60% {
+        transform: translateY(-25px); /* Slight bounce down */
+      }
     }
 
     /* Hero Section - Background Image Rotation Styles */
     .hero-background-slideshow {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0; /* Ensures it's behind the content */
+      transition: none;
+      background-image: url('assets/img/...jpg');
       background-size: cover;
-      background-position: center center;
+      background-position: top right;
       background-repeat: no-repeat;
-      transition: background-image 1.5s ease-in-out; /* Smooth transition between images */
+      filter: contrast(3) brightness(3) saturate(1.2); 
+      background-image: url('assets/img/Sabari_laptop_profile_image1.jpg');
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4); /* dark overlay */
+      z-index: 0;
     }
 
     /* Ensure hero content is above the slideshow */
@@ -288,6 +265,46 @@
       position: relative;
       z-index: 1;
     }
+    .animated-pipeline-btn {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      z-index: 9999;
+      background: linear-gradient(135deg, #44bd32, #2ecc71);
+      color: #fff;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 50px;
+      box-shadow: 0 0 20px rgba(68, 189, 50, 0.6), 0 0 30px rgba(68, 189, 50, 0.4);
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      animation: pulse-glow 2s infinite ease-in-out, floatBounce 3s ease-in-out infinite;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .animated-pipeline-btn:hover {
+      transform: scale(1.1) rotate(-1deg);
+      box-shadow: 0 0 30px #00ff00, 0 0 50px #44bd32;
+    }
+    /* Glowing pulse animation */
+    @keyframes pulse-glow {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(68, 189, 50, 0.6), 0 0 30px rgba(68, 189, 50, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 35px #00ff00, 0 0 55px #00ff00;
+      }
+    }
+    /* Floating bounce effect */
+    @keyframes floatBounce {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
 
     /* New styles for the unique Tech Stack section */
     .tech-card {
@@ -335,30 +352,49 @@
       line-height: 1.5;
       color: #ccc; /* Lighter grey for description */
     }
+
+    .hero-text {
+      font-size: 1.5rem;
+      color: #0747f6;
+    }
+    
+    .typed {
+      color: #FF5722;
+    }
+
   </style>
 
 </head>
 
 <body class="index-page">
 
-  <!-- Removed the entire <header id="header" ...> block (left navigation bar) -->
+  
 
   <main class="main">
-
-    <section id="hero" class="hero section dark-background">
-      <!-- This div will hold the rotating background images -->
-      <div id="hero-background-slideshow" class="hero-background-slideshow"></div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>SABARIVENKATESH KATHIRVEL</h2>
-        <p>I'm a <span class="typed" data-typed-items="AWS Certified Data Engineer, ETL Specialist, Data Lake Architect, Power BI Developer"></span></p>
-        <!-- New button to trigger pipeline visibility -->
-        <button id="travelPipelineBtn" class="travel-pipeline-button">
-          <i class="bi bi-play-circle me-2"></i> Travel through the Data Pipeline!
-        </button>
+    <section id="hero" class="hero section" style="background-color: #dcdbdb; margin: 0; padding: 0;">
+      <div class="container-fluid p-0" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-0 align-items-stretch" style="min-height: 100vh; margin: 0;">
+          
+          <!-- Left: Text -->
+           <div class="col-md-6 d-flex align-items-center ps-5 text-white">
+            <div>
+              <h2 style="font-size: 3rem; font-weight: 800; color: #FFF;">
+                SABARIVENKATESH KATHIRVEL
+              </h2>
+              <p class="hero-text">
+                I'm a <span class="typed" data-typed-items="AWS Certified Data Engineer, ETL Specialist, Data Lake Architect, Power BI Developer"></span>
+              </p>
+            </div>
+          </div>
+          <!-- Right: Full Height Image -->
+           <div class="col-md-6 p-0 d-flex align-items-stretch" style="margin: 0; padding: 0;">
+            <img src="assets/img/Sabari_laptop_profile_image.jpg" alt="Sabari Profile"
+            style="width: 100%; height: 100vh; object-fit: cover; object-position: top right; display: block;">
+          </div>
+        </div>
       </div>
-      <!-- Pipeline container - initially hidden -->
-      <div class="pipeline-container" id="pipelineContainer">
+    
+      <div class="pipeline-container mt-4" style="display:none;">
         <div class="pipeline-box" id="box-about" onclick="scrollToSection('about')"><i class="bi bi-cloud-arrow-down"></i><br>Ingestion</div>
         <div class="arrow">→</div>
         <div class="pipeline-box" id="box-portfolio" onclick="scrollToSection('portfolio')"><i class="bi bi-tools"></i><br>Transformation</div>
@@ -369,7 +405,13 @@
         <div class="arrow">→</div>
         <div class="pipeline-box" id="box-resume" onclick="scrollToSection('resume')"><i class="bi bi-shield-check"></i><br>Monitoring</div>
       </div>
-    </section><!-- /Hero Section -->
+    
+<!-- Floating Button (only on hero/homepage) -->
+<button id="openPipelineBtn" class="animated-pipeline-btn">
+  <span id="pipelineButtonText">Launch the Data Pipeline 🚀</span>
+</button>
+
+</section><!-- /Hero Section -->
 
     <section id="about" class="about section">
 
@@ -381,8 +423,7 @@
 
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
-            <!-- Updated image path to relative assets/img/ -->
-            <img src="assets/img/my-profile-img.jpg" class="img-fluid" alt="Profile Image">
+            <img src="C:\Users\Dell\Downloads\iPortfolio-1.0.0 (1)\iPortfolio-1.0.0\assets\img\SABARI_PORTFOLIO BG.jpeg" class="img-fluid" alt="Profile Image">
           </div>
           <div class="col-lg-8 content">
             <h2>AWS Certified Data Engineer - Associate</h2>
@@ -404,14 +445,15 @@
                   <li><i class="bi bi-chevron-right"></i> <strong>Availability:</strong> <span>Available</span></li>
                 </ul>
               </div>
+              <li>
+                <a href="C:\Users\Dell\Downloads\iPortfolio-1.0.0 (1)\iPortfolio-1.0.0\assets\img\SABARIVENKATESH_K_DATA_ENGINEER_RESUME.pdf" download="SABARIVENKATESH_K_DATA_ENGINEER_RESUME.pdf" class="btn btn-primary btn-sm ms-3" style="background-color: #30d6f3; border-color: #44bd32; color: #fff; font-weight: bold; border-radius: 5px; padding: 8px 15px;">
+                    <i class="bi bi-download navicon"></i> Download Resume
+                </a>
+            </li>
             </div>
-            <!-- Main page resume download button -->
-            <div class="mt-4 text-center">
-              <!-- Updated href to relative assets/img/ -->
-              <a href="assets/img/SABARIVENKATESH_K_DATA_ENGINEER_RESUME.pdf" download="SABARIVENKATESH_K_DATA_ENGINEER_RESUME.pdf" class="btn btn-primary btn-lg rounded-pill px-4 py-2" style="background-color: #17caf3; border-color: #17caf3; color: #1a1a2e; font-weight: bold;">
-                <i class="bi bi-download me-2"></i> Download My Resume
-              </a>
-            </div>
+            <p class="py-3">
+              I possess deep knowledge in data engineering and extensive experience with AWS cloud services. I am proficient in managing complex datasets, optimizing performance, and developing data solutions tailored to business needs.
+            </p>
           </div>
         </div>
 
@@ -562,16 +604,21 @@
 
             <h3 class="resume-title">Certifications</h3>
             <div class="resume-item">
-              <h4>AWS Certified Data Engineer – Associate</h4>
-              <p><em>(Issued: AWS)</em></p>
-              <p><a href="YOUR_AWS_DATA_ENGINEER_CERT_URL" target="_blank" rel="noopener noreferrer">View Certificate <i class="bi bi-box-arrow-up-right"></i></a></p>
+                <h4>AWS Certified Data Engineer – Associate</h4>
+                <p><em>(Issued: AWS)</em></p>
+                <p><a href="https://www.credly.com/badges/b14e4222-06c3-4b32-8b61-b25e89658d54/public_url" target="_blank" rel="noopener noreferrer">View Certificate <i class="bi bi-box-arrow-up-right"></i></a></p>
             </div>
             <div class="resume-item">
-              <h4>AWS Certified Cloud Practitioner</h4>
-              <p><em>(Issued: AWS)</em></p>
-              <p><a href="YOUR_AWS_CLOUD_PRACTITIONER_CERT_URL" target="_blank" rel="noopener noreferrer">View Certificate <i class="bi bi-box-arrow-up-right"></i></a></p>
+                <h4>AWS Certified Cloud Practitioner</h4>
+                <p><em>(Issued: AWS)</em></p>
+                <p><a href="https://www.credly.com/badges/e77c7496-b087-43cf-b799-108c58ca6b5c/public_url" target="_blank" rel="noopener noreferrer">View Certificate <i class="bi bi-box-arrow-up-right"></i></a></p>
             </div>
-          </div>
+            <li>
+            <a href="C:\Users\Dell\Downloads\iPortfolio-1.0.0 (1)\iPortfolio-1.0.0\assets\img\SABARIVENKATESH_K_DATA_ENGINEER_RESUME.pdf" download="SABARIVENKATESH_K_DATA_ENGINEER_RESUME.pdf" class="btn btn-primary btn-sm ms-3" style="background-color: #30d6f3; border-color: #44bd32; color: #fff; font-weight: bold; border-radius: 5px; padding: 8px 15px;">
+                <i class="bi bi-download navicon"></i> Download Resume
+            </a>
+        </li>
+        </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <h3 class="resume-title">Professional Experience</h3>
@@ -980,243 +1027,55 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <script>
-    // Function to scroll to a section
-    function scrollToSection(sectionId) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
+  
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const messages = [
+    "Launch the Data Pipeline 🚀",
+    "Showcase My Pipeline Power ⚡",
+    "See Me in Action 👨‍💻",
+    "Build with Me, Byte by Byte 💾",
+    "Decode My Portfolio 🧠",
+    "Tap to Transform Data 🔧"
+  ];
+  let idx = 0;
+  const btnText = document.getElementById("pipelineButtonText");
+  setInterval(() => {
+    idx = (idx + 1) % messages.length;
+    if (btnText) btnText.textContent = messages[idx];
+  }, 3000);
+
+  const openBtn = document.getElementById("openPipelineBtn");
+  const navBar = document.querySelector(".pipeline-container");
+  const toggleIcon = document.getElementById("pipeline-minimized-toggle");
+
+  openBtn && openBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    const navVisible = getComputedStyle(navBar).display !== "none";
+    if (navVisible) {
+      navBar.style.display = "none";
+      toggleIcon.style.display = "block";
+    } else {
+      navBar.style.display = "flex";
+      toggleIcon.style.display = "none";
     }
+  });
 
-    // Function to enable/disable scrolling
-    function toggleBodyScroll(enable) {
-        if (enable) {
-            document.body.classList.remove('no-scroll');
-            console.log("Scroll enabled.");
-        } else {
-            document.body.classList.add('no-scroll');
-            console.log("Scroll disabled.");
-        }
-    }
+  toggleIcon && toggleIcon.addEventListener("click", function(){
+    navBar.style.display = "flex";
+    this.style.display = "none";
+  });
 
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get references for the new button and pipeline container
-        const travelPipelineBtn = document.getElementById('travelPipelineBtn');
-        const pipelineContainer = document.getElementById('pipelineContainer');
-        const heroSection = document.getElementById('hero');
+  window.scrollToSection = function(id) {
+    const sec = document.getElementById(id);
+    sec && sec.scrollIntoView({ behavior: "smooth" });
+    if (navBar) navBar.style.display = "none";
+    if (toggleIcon) toggleIcon.style.display = "block";
+  };
+});
+</script>
 
-        console.log("DOMContentLoaded fired.");
-
-        // Initially disable scrolling on page load if at the top
-        // Check if heroSection exists and if the user is at the very top (or close to it)
-        if (heroSection && window.pageYOffset < 10) { // Using < 10 to account for minor rendering differences
-            toggleBodyScroll(false); // Disable scrolling
-            console.log("Initial scroll state: Disabled (at hero section).");
-        } else {
-            console.log("Initial scroll state: Enabled (not at hero section or hero not found).");
-        }
-
-        // Event listener for the new "Travel Pipeline" button
-        if (travelPipelineBtn) {
-          console.log("travelPipelineBtn found.");
-          travelPipelineBtn.addEventListener('click', (event) => {
-            console.log("Travel Pipeline Button Clicked!");
-            event.preventDefault(); // Prevent default button behavior (e.g., form submission)
-            pipelineContainer.classList.add('active'); // Show the pipeline with animation
-            travelPipelineBtn.style.display = 'none'; // Hide the button after click
-            toggleBodyScroll(true); // Enable scrolling
-            console.log("Pipeline activated, scroll enabled by button click.");
-          });
-        } else {
-            console.error("ERROR: Travel Pipeline button not found!");
-        }
-
-        if (!pipelineContainer) {
-            console.error("ERROR: Pipeline container not found!");
-        }
-
-        // Event listener for pipeline box clicks (delegated to document for robustness)
-        document.addEventListener('click', (event) => {
-            const targetBox = event.target.closest('.pipeline-box');
-            if (targetBox) {
-                const sectionId = targetBox.id.replace('box-', '');
-                scrollToSection(sectionId);
-                console.log("Pipeline box clicked, scrolling to:", sectionId);
-            }
-        });
-
-        // Modify the scroll event listener for pipeline box highlighting
-        document.addEventListener("scroll", () => {
-          // Only apply active state to pipeline boxes if the pipeline container is active
-          if (pipelineContainer && pipelineContainer.classList.contains('active')) {
-            const sections = ["about", "portfolio", "skills", "services", "resume"];
-            sections.forEach(sectionId => {
-              const section = document.getElementById(sectionId);
-              const box = document.getElementById("box-" + sectionId);
-              if (section && box) { // Check if both elements exist
-                const rect = section.getBoundingClientRect();
-                // Highlight if section is mostly in view
-                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-                  box.style.backgroundColor = "#44bd32"; // active color
-                } else {
-                  box.style.backgroundColor = "#273c75"; // default
-                }
-              }
-            });
-          }
-        });
-
-        // Terminal related constants and functions
-        const output = document.getElementById('output');
-        const commandInput = document.getElementById('commandInput');
-        const openTerminalBtn = document.getElementById('openTerminalBtn');
-        const closeTerminalBtn = document.getElementById('closeTerminalBtn');
-        const terminalOverlay = document.getElementById('terminalOverlay');
-
-        // Define commands and their responses
-        const commands = {
-            "select * from skills;": `
-Python: 90%
-SQL: 85%
-AWS (S3, Glue, Athena, Redshift, Lambda, KMS, CloudWatch, Step Functions): 80%
-PySpark: 75%
-ETL/ELT: 88%
-Data Warehousing: 82%
-Pandas: 80%
-Microsoft PowerBI: 70%
-Concepts: Data Lake, Common Data Model (CDM), Data Modeling, Data Governance, Data Validation
-`,
-            "select * from projects;": `
-1. Healthcare Data Analytics Pipeline: Built and deployed a comprehensive pipeline on AWS Cloud, enhancing data accessibility and consistency by over 35%.
-2. S3 Data Lake Query Optimization: Optimized data retrieval from S3 Data Lake using AWS Athena, accelerating query performance by up to 50%.
-3. Scalable ETL for E-commerce Data (Hypothetical): Designed and implemented a robust ETL pipeline for e-commerce data using AWS Glue and Redshift.
-4. Real-time IoT Data Ingestion & Analytics (Hypothetical): Developed a real-time data ingestion and processing pipeline for IoT sensor data using Kinesis and Lambda.
-`,
-            "select * from certifications;": `
-AWS Certified Data Engineer – Associate (Issued: AWS)
-AWS Certified Cloud Practitioner (Issued: AWS)
-`,
-            "select * from contact;": `
-Email: sabarivarun3@gmail.com
-Phone: +91 9626263113
-LinkedIn: linkedin.com/in/sabarivarun
-GitHub: github.com/sabarivarun
-`,
-            "help;": `
-Available commands:
-SELECT * FROM skills;
-SELECT * FROM projects;
-SELECT * FROM certifications;
-SELECT * FROM contact;
-help;
-clear;
-`,
-            "clear;": "" // Command to clear the terminal output
-        };
-
-        function handleCommand(e) {
-            if (e.key === 'Enter') {
-                const cmd = e.target.value.trim().toLowerCase(); // Convert to lowercase for case-insensitivity
-                let res = '';
-
-                if (cmd === 'clear;') {
-                    output.innerText = 'Welcome to Sabarivenkatesh\'s Data Terminal\nType \'SELECT * FROM skills;\' or \'help;\' to get started.\n';
-                } else if (commands[cmd]) {
-                    res = commands[cmd];
-                } else {
-                    res = 'Error: command not found. Type "help;".';
-                }
-
-                // Append command and response to output
-                if (cmd !== 'clear;') { // Don't append command if clearing
-                    output.innerText += `\n> ${e.target.value.trim()}\n${res}`;
-                }
-                
-                e.target.value = ''; // Clear input field
-                output.scrollTop = output.scrollHeight; // Scroll to bottom
-            }
-        }
-
-        // Event listeners for opening and closing the terminal overlay
-        if (openTerminalBtn) {
-            openTerminalBtn.addEventListener('click', () => {
-                terminalOverlay.classList.add('active');
-                toggleBodyScroll(false); // Disable scrolling when terminal is open
-                commandInput.focus(); // Focus input when terminal opens
-                console.log("Terminal opened, scroll disabled.");
-            });
-        } else {
-            console.error("ERROR: Open Terminal button not found!");
-        }
-
-        if (closeTerminalBtn) {
-            closeTerminalBtn.addEventListener('click', () => {
-                terminalOverlay.classList.remove('active');
-                // Only re-enable scroll if pipeline is active, otherwise keep frozen on hero
-                if (pipelineContainer && pipelineContainer.classList.contains('active')) {
-                    toggleBodyScroll(true);
-                    console.log("Terminal closed, pipeline active, scroll enabled.");
-                } else if (window.pageYOffset < 10) { // If still on hero and pipeline not active
-                    toggleBodyScroll(false);
-                    console.log("Terminal closed, still on hero, scroll disabled.");
-                } else {
-                    toggleBodyScroll(true); // If not on hero, enable scroll
-                    console.log("Terminal closed, not on hero, scroll enabled.");
-                }
-            });
-        } else {
-            console.error("ERROR: Close Terminal button not found!");
-        }
-
-        if (terminalOverlay) {
-            // Close terminal if clicking outside the content area (on the overlay itself)
-            terminalOverlay.addEventListener('click', (event) => {
-                if (event.target === terminalOverlay) {
-                    terminalOverlay.classList.remove('active');
-                    // Only re-enable scroll if pipeline is active, otherwise keep frozen on hero
-                    if (pipelineContainer && pipelineContainer.classList.contains('active')) {
-                        toggleBodyScroll(true);
-                        console.log("Terminal closed by overlay click, pipeline active, scroll enabled.");
-                    } else if (window.pageYOffset < 10) { // If still on hero and pipeline not active
-                        toggleBodyScroll(false);
-                        console.log("Terminal closed by overlay click, still on hero, scroll disabled.");
-                    } else {
-                        toggleBodyScroll(true); // If not on hero, enable scroll
-                        console.log("Terminal closed by overlay click, not on hero, scroll enabled.");
-                    }
-                }
-            });
-        } else {
-            console.error("ERROR: Terminal Overlay not found!");
-        }
-
-
-        // Hero Background Slideshow Script
-        const heroBackgroundSlideshow = document.getElementById('hero-background-slideshow');
-        if (heroBackgroundSlideshow) {
-          const images = [
-            'assets/img/bg-4.jpg', /* Your first image path */
-            'assets/img/bg-1.jpg', /* Your second image path */
-            'assets/img/bg-2.jpg'  /* Your third image path */
-          ];
-          let currentImageIndex = 0;
-
-          function changeBackgroundImage() {
-            heroBackgroundSlideshow.style.backgroundImage = `url('${images[currentImageIndex]}')`;
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-          }
-
-          // Initial background image set
-          changeBackgroundImage();
-
-          // Change image every 5 seconds (5000 milliseconds)
-          setInterval(changeBackgroundImage, 5000);
-        } else {
-            console.error("ERROR: Hero Background Slideshow element not found!");
-        }
-    });
-  </script>
 
 </body>
 
