@@ -550,7 +550,7 @@
     }
 
     .typed {
-      color: #FF5722;
+      color: #22fbff;
     }
 
     @keyframes floatCloud {
@@ -620,6 +620,80 @@
         transform: translateY(0);
       }
     }
+
+    .data-bits-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .data-bits-container span {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: radial-gradient(circle, #e0b3ff, #b388ff);
+      border-radius: 50%;
+      animation: floatBits 7s ease-in-out infinite;
+      box-shadow:
+        0 0 4px #e0b3ff,
+        0 0 8px #d29bff,
+        0 0 12px #c77aff;
+      opacity: 0.5;
+    }
+
+    @keyframes floatBits {
+      0% {
+        transform: translateY(0) scale(0.8) rotate(0deg);
+        opacity: 0.4;
+      }
+
+      50% {
+        transform: translateY(-100px) scale(1.5) rotate(180deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(0) scale(0.8) rotate(360deg);
+        opacity: 0.4;
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: #17caf3;
+      font-weight: 600;
+      text-shadow: 0 0 8px #17caf3, 0 0 16px #a177ff;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .typed {
+      animation: pulseText 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulseText {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+      }
+    }
+
+    .typed-cursor {
+      color: #ff63e0;
+      text-shadow: 0 0 5px #ff63e0, 0 0 10px #ff63e0;
+      font-weight: bold;
+    }
   </style>
 
 </head>
@@ -630,14 +704,14 @@
 
   <main class="main">
     <section id="hero" class="hero section" style="
-  background: linear-gradient(to right, #190c29, #442b63, #30243e);
+  background: linear-gradient(to right, #1f0c29, #462556, #30243e);
   margin: 0;
   padding: 0;
   position: relative;
   overflow: hidden;
   z-index: 1;
 ">
-      <! -- Glowing Star Background Layer -->
+      <!-- Glowing Star Background Layer -->
       <div class="stars-overlay"></div>
 
       <div class="container-fluid p-0">
@@ -646,6 +720,7 @@
           <!-- Left: Text Content -->
           <div class="col-md-6 ps-5 text-white"
             style="padding-top: 5vh; display: flex; flex-direction: column; height: 100vh;">
+            <div class="data-bits-container"></div>
             <!-- Quote at top -->
             <p id="quote-rotator" class="rotating-quote"
               style="font-size: 3rem; color: #00f7ff; text-shadow: 0 0 10px #00f7ff; opacity: 0; transition: opacity 0.6s ease-in-out; margin-bottom: auto;">
@@ -659,7 +734,7 @@
                 SABARIVENKATESH KATHIRVEL
               </h2>
 
-              <p class="lead mb-4" style="margin-bottom: 30px; font-size: 1.25rem;">
+              <p class="lead mb-4 hero-subtitle">
                 I'm a <span class="typed"
                   data-typed-items="AWS Certified Data Engineer, ETL Specialist, Data Lake Architect, Power BI Developer"></span>
               </p>
@@ -678,7 +753,7 @@
                 </a>
                 <a href="assets/img/SABARIVENKATESH_K_DATA_ENGINEER_RESUME.pdf" target="_blank"
                   class="btn btn-glow rounded-pill resume-btn"
-                  style="background-color: #ff63e0; color: white; box-shadow: 0 0 15px rgba(248, 247, 248, 0.5);">
+                  style="background-color: #706f70; color: white; box-shadow: 0 0 15px rgba(248, 247, 248, 0.5);">
                   <i class="bi bi-file-earmark-person" style="font-size: 1.3rem; vertical-align: middle;"></i>
                   <span style="margin-left: 0.5rem; font-weight: 600; vertical-align: middle;">Resume</span>
                 </a>
@@ -746,7 +821,7 @@
   animation: floatCloud 3s ease-in-out infinite;
   font-family: 'Poppins', sans-serif;
 ">
-        ☁️ Hey! cool... Use me to scroll... ➡️
+        Hey! cool... Use me to scroll... ➡️
       </div>
 
     </section><!-- /Hero Section -->
@@ -764,8 +839,7 @@
 
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
-            <img src="assets\img\SABARI_PORTFOLIO BG.jpeg"
-              class="img-fluid" alt="Profile Image">
+            <img src="assets\img\SABARI_PORTFOLIO BG.jpeg" class="img-fluid" alt="Profile Image">
           </div>
           <div class="col-lg-8 content">
             <h2>AWS Certified Data Engineer - Associate</h2>
@@ -833,8 +907,7 @@
             <!-- Project 1: Real-Time Healthcare Analytics -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
-                <img src="assets\img\bg-1.jpg"
-                  class="img-fluid" alt="Real-Time Healthcare Analytics">
+                <img src="assets\img\bg-1.jpg" class="img-fluid" alt="Real-Time Healthcare Analytics">
                 <div class="portfolio-info">
                   <h4>Real-Time Healthcare Analytics</h4>
                   <p>Comprehensive healthcare data analytics pipeline on AWS Cloud.</p>
@@ -847,8 +920,7 @@
             <!-- Project 2: ETL Pipeline for Healthcare -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
-                <img src="assets\img\bg-4.jpg"
-                  class="img-fluid" alt="ETL Pipeline for Healthcare">
+                <img src="assets\img\bg-4.jpg" class="img-fluid" alt="ETL Pipeline for Healthcare">
                 <div class="portfolio-info">
                   <h4>ETL Pipeline for Healthcare</h4>
                   <p>Robust ETL processes using AWS Glue (Python/PySpark).</p>
@@ -861,8 +933,7 @@
             <!-- Project 3: S3 Data Lake Optimization -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <div class="portfolio-content h-100">
-                <img src="assets\img\bg-2.jpg"
-                  class="img-fluid" alt="S3 Data Lake Optimization">
+                <img src="assets\img\bg-2.jpg" class="img-fluid" alt="S3 Data Lake Optimization">
                 <div class="portfolio-info">
                   <h4>S3 Data Lake Optimization</h4>
                   <p>Optimized data retrieval from S3 Data Lake using AWS Athena.</p>
@@ -875,8 +946,7 @@
             <!-- Project 4: Power BI Dashboards -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
               <div class="portfolio-content h-100">
-                <img src="assets\img\bg-3.jpg"
-                  class="img-fluid" alt="Power BI Dashboards">
+                <img src="assets\img\bg-3.jpg" class="img-fluid" alt="Power BI Dashboards">
                 <div class="portfolio-info">
                   <h4>Power BI Dashboards</h4>
                   <p>Interactive dashboards for business insights.</p>
@@ -1076,7 +1146,7 @@
               <p><a href="https://www.credly.com/badges/b14e4222-06c3-4b32-8b61-b25e89658d54/public_url" target="_blank"
                   rel="noopener noreferrer">View Certificate <i class="bi bi-box-arrow-up-right"></i></a></p>
             </div>
-            
+
             <div class="resume-item">
               <h4>AWS Certified Cloud Practitioner</h4>
               <p><em>(Issued: AWS)</em></p>
@@ -1545,6 +1615,20 @@
     setInterval(rotateQuote, 4000);
   </script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const container = document.querySelector('.data-bits-container');
+      for (let i = 0; i < 60; i++) {
+        const bit = document.createElement('span');
+        bit.style.left = Math.random() * 100 + '%';
+        bit.style.top = Math.random() * 100 + '%';
+        bit.style.animationDelay = (Math.random() * 10) + 's';
+        bit.style.width = (Math.random() * 2 + 2) + 'px';
+        bit.style.height = bit.style.width;
+        container.appendChild(bit);
+      }
+    });
+  </script>
 
 
 </body>
