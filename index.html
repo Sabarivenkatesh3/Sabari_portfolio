@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <title>SABARIVENKATESH KATHIRVEL - AWS Certified Data Engineer</title>
   <meta
     content="SABARIVENKATESH KATHIRVEL, AWS Certified Data Engineer - Associate, Data Pipelines, ETL, Data Lake, AWS Cloud, Interactive Terminal"
@@ -694,6 +695,29 @@
       text-shadow: 0 0 5px #ff63e0, 0 0 10px #ff63e0;
       font-weight: bold;
     }
+
+    @media (max-width: 768px) {
+      .hero .row {
+        flex-wrap: nowrap !important;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+      }
+
+      .hero .col-md-6 {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+      }
+
+      .data-bits-container {
+        display: none;
+        /* hide neon dots on mobile for performance */
+      }
+
+      .terminal-toggle-button {
+        bottom: 80px;
+        /* move up to avoid overlapping pipeline */
+      }
+    }
   </style>
 
 </head>
@@ -715,7 +739,8 @@
       <div class="stars-overlay"></div>
 
       <div class="container-fluid p-0">
-        <div class="row g-0 align-items-center" style="min-height: 100vh; margin: 0;">
+        <div class="row g-0 align-items-center flex-nowrap" style="min-height: 100vh; margin: 0; overflow-x: auto;">
+
 
           <!-- Left: Text Content -->
           <div class="col-md-6 ps-5 text-white"
@@ -1284,19 +1309,12 @@
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
-
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span>
-        </p>
-      </div>
-      <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a
-          href="https://themewagon.com">ThemeWagon</a>
-      </div>
+    <div class="container text-center">
+      <p class="mb-1">© 2025 <strong class="px-1">Sabarivenkatesh Kathirvel</strong> — All Rights Reserved</p>
+      <p style="font-size: 0.9rem;">Designed & Built with ❤️ and AWS expertise</p>
     </div>
-
   </footer>
+
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
@@ -1391,7 +1409,7 @@
       ];
       let idx = 0;
       const btnText = document.getElementById("pipelineButtonText");
-      setInterval(() => {
+      let messageInterval = setInterval(() => {
         idx = (idx + 1) % messages.length;
         if (btnText) btnText.textContent = messages[idx];
       }, 3000);
@@ -1407,12 +1425,18 @@
         openBtn.addEventListener("click", function (e) {
           e.preventDefault();
 
-          // Unlock scroll
-          document.body.classList.remove("lock-scroll");
-
-          // Show nav bar
-          if (navBar) navBar.style.display = "flex";
-          if (toggleIcon) toggleIcon.style.display = "none";
+          const isVisible = navBar && navBar.style.display === "flex";
+          if (isVisible) {
+            navBar.style.display = "none";
+            document.body.classList.add("lock-scroll");
+            if (btnText) btnText.textContent = "Launch the Data Pipeline 🚀";
+            if (toggleIcon) toggleIcon.style.display = "block";
+          } else {
+            navBar.style.display = "flex";
+            document.body.classList.remove("lock-scroll");
+            if (btnText) btnText.textContent = "Collapse the Pipeline ✖️";
+            if (toggleIcon) toggleIcon.style.display = "none";
+          }
         });
       }
 
@@ -1420,7 +1444,7 @@
         toggleIcon.addEventListener("click", function () {
           if (navBar) navBar.style.display = "flex";
           toggleIcon.style.display = "none";
-          document.body.classList.remove("lock-scroll"); // Unlock again on re-open
+          document.body.classList.remove("lock-scroll");
         });
       }
 
@@ -1460,6 +1484,9 @@
       }
     }, { passive: true });
   </script>
+
+
+
 
   <script src="https://unpkg.com/desandro-matches-selector@2.0.2/matches-selector.js"></script>
   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
@@ -1550,6 +1577,8 @@
       }, speed);
     }
   </script>
+
+
   <script>
     document.getElementById("contactForm").addEventListener("submit", function (e) {
       e.preventDefault();
