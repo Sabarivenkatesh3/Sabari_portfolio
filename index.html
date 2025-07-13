@@ -1594,7 +1594,7 @@
       })
         .then(res => res.text())
         .then(data => {
-          document.getElementById("statusMsg").textContent = "✅ Message sent successfully!";
+          document.getElementById("statusMsg").innerHTML = `✅ Thanks for reaching out🙌!<br><strong>Your message is safely in my pipeline. 🚀</strong>`;
           form.reset();
         })
         .catch(err => {
